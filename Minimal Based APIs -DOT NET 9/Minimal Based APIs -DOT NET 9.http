@@ -4,3 +4,4 @@ GET {{Minimal_Based_APIs__DOT_NET_9_HostAddress}}/
 Accept: application/json
 
 ###
+OPTIONS  {{Minimal_Based_APIs__DOT_NET_9_HostAddress}}/api/products
