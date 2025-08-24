@@ -1,7 +1,12 @@
 @Minimal_Based_APIs__DOT_NET_9_HostAddress = http://localhost:5271
+@productId = 2779ee47-10b0-4bd7-8342-404006aa1392
 
-GET {{Minimal_Based_APIs__DOT_NET_9_HostAddress}}/
-Accept: application/json
-
+ 
 ###
 OPTIONS  {{Minimal_Based_APIs__DOT_NET_9_HostAddress}}/api/products
+
+###
+GET {{Minimal_Based_APIs__DOT_NET_9_HostAddress}}/api/products
+
+###
+GET {{Minimal_Based_APIs__DOT_NET_9_HostAddress}}/api/products/{{productId}}

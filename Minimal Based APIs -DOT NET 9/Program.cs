@@ -1,27 +1,27 @@
 
 
 
+using M02.MinimalEndpointAnatomy.Data;
+using M02.MinimalEndpointAnatomy.Responses;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<ProductRepository>();
 
 var app = builder.Build();
 
+app.MapGet("/api/products", (ProductRepository repository) =>
+{
+    return Results.Ok(repository.GetProductsPage());
+}    );
 
-app.MapGet("/api/products", () => Results.Ok());
+app.MapGet("/api/products/{id:guid}", (Guid id, ProductRepository repository) =>
+{
+    var product = repository.GetProductById(id);
+    return product is null ? Results.NotFound() : Results.Ok(ProductResponse.FromModel(product));
+});
 
-app.MapPost("/api/products", () => Results.Ok());
-
-app.MapPut("/api/products/{id}", (Guid id) => Results.NoContent());
-
-app.MapPatch("/api/products/{id}", (Guid id) => Results.NoContent());
-
-app.MapDelete("/api/products/{id}", (Guid id) => Results.NoContent());
-
-//GENIRIC
-app.MapMethods("api/products", ["OPTIONS"], () => Results.NoContent());
-app.MapMethods("api/products", ["GET"], () => Results.Ok());
-app.MapMethods("api/products", ["GET","POST"], () => Results.NoContent());
 
 
 app.Run();
