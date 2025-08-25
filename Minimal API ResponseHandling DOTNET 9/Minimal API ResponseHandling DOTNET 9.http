@@ -8,11 +8,12 @@ GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/text
 ###
 GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/json
 
-### RESULT
+### Lambda Expression with RESULT
 GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-le-ir/{{productId}}
 
-### TYPED RESULT
+### Lambda Expression with Typed RESULT  
 GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-le-tr/{{productId}}
 
 
-
+### Method Reference with RESULT
+GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-mr-ir/{{productId}}

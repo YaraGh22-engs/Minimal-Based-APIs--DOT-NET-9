@@ -17,6 +17,7 @@ app.MapGet("/text", () => "Hello World");
 
 app.MapGet("/json", () => new { Message = "Hello" });
 
+// Lambda Expression with RESULT
 app.MapGet("/api/products-le-ir/{id:guid}", (Guid id, ProductRepository repository) =>
 {
     var product = repository.GetProductById(id);
@@ -26,6 +27,7 @@ app.MapGet("/api/products-le-ir/{id:guid}", (Guid id, ProductRepository reposito
             : Results.Ok(product);
 });
 
+// Lambda Expression with Typed RESULT
 app.MapGet("/api/products-le-tr/{id:guid}",
 Results<Ok<Product>, NotFound> (Guid id, ProductRepository repository) =>
 {
@@ -35,6 +37,18 @@ Results<Ok<Product>, NotFound> (Guid id, ProductRepository repository) =>
             ? TypedResults.NotFound()
             : TypedResults.Ok(product);
 });
+
+app.MapGet("/api/products-mr-ir/{id:guid}", GetProductIResult);
+
+// Method Reference with RESULT
+static IResult GetProductIResult(Guid id, ProductRepository repository)
+{
+    var product = repository.GetProductById(id);
+
+    return product is null
+            ? Results.NotFound()
+            : Results.Ok(product);
+}
 
 
 app.Run();
