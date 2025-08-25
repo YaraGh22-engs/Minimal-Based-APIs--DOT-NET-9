@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal API ResponseHandlin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grouped Endpoints", "Grouped Endpoints\Grouped Endpoints.csproj", "{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal REST API", "Minimal REST API\Minimal REST API.csproj", "{FA4319E7-97A5-4F32-B756-4E894FA69686}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA4319E7-97A5-4F32-B756-4E894FA69686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA4319E7-97A5-4F32-B756-4E894FA69686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA4319E7-97A5-4F32-B756-4E894FA69686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA4319E7-97A5-4F32-B756-4E894FA69686}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

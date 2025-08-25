@@ -1,0 +1,77 @@
+@baseUrl = https://localhost:7061
+@productId = 2779ee47-10b0-4bd7-8342-404006aa1392
+### 
+OPTIONS {{baseUrl}}/api/products
+
+### 
+HEAD {{baseUrl}}/api/products/{{productId}}
+
+###
+GET {{baseUrl}}/api/products?page=1&pageSize=100
+
+###
+GET {{baseUrl}}/api/products/{{productId}}?includeReviews=false
+
+###
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Keyboard",
+  "price": 34.99
+}
+
+
+###
+POST {{baseUrl}}/api/products/{{productId}}/reviews
+Content-Type: application/json
+
+{
+  "reviewer": "Kevin Kelo",
+  "stars": 3
+}
+
+### 
+PUT {{baseUrl}}/api/products/{{productId}}
+Content-Type: application/json
+
+{
+    "name": "chocolate bar",
+    "price": 3.50
+}
+
+###
+PATCH {{baseUrl}}/api/products/{{productId}} 
+Content-Type: application/json-patch+json
+
+[
+  {
+    "op": "replace",
+    "path": "/price",
+    "value": 2.99
+  },
+]
+
+### DELETE
+DELETE {{baseUrl}}/api/products/{{productId}}
+
+###
+POST {{baseUrl}}/api/products/process
+
+@JobId = b079ad59-f94a-4ab2-b584-cd55d60eac29
+
+###
+GET {{baseUrl}}/api/products/status/{{JobId}}
+
+
+### GET
+GET {{baseUrl}}/api/products/csv
+
+###
+GET {{baseUrl}}/api/products/physical-csv-file
+
+###
+GET {{baseUrl}}/api/products/products-legacy
+
+###
+GET {{baseUrl}}/api/products/legacy-products
