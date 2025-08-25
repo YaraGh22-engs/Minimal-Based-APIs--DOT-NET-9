@@ -38,9 +38,8 @@ Results<Ok<Product>, NotFound> (Guid id, ProductRepository repository) =>
             : TypedResults.Ok(product);
 });
 
-app.MapGet("/api/products-mr-ir/{id:guid}", GetProductIResult);
-
 // Method Reference with RESULT
+app.MapGet("/api/products-mr-ir/{id:guid}", GetProductIResult);
 static IResult GetProductIResult(Guid id, ProductRepository repository)
 {
     var product = repository.GetProductById(id);
@@ -48,6 +47,18 @@ static IResult GetProductIResult(Guid id, ProductRepository repository)
     return product is null
             ? Results.NotFound()
             : Results.Ok(product);
+}
+
+// Method Reference with Typed RESULT
+app.MapGet("/api/products-mr-tr/{id:guid}", GetProductTypedResult);
+
+static Results<Ok<Product>, NotFound> GetProductTypedResult(Guid id, ProductRepository repository)
+{
+    var product = repository.GetProductById(id);
+
+    return product is null
+            ? TypedResults.NotFound()
+            : TypedResults.Ok(product);
 }
 
 

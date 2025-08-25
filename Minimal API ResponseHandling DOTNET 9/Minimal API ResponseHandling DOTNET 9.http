@@ -17,3 +17,6 @@ GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-le-tr/{{p
 
 ### Method Reference with RESULT
 GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-mr-ir/{{productId}}
+
+###Method Reference with Typed RESULT
+GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-mr-tr/{{productId}}
