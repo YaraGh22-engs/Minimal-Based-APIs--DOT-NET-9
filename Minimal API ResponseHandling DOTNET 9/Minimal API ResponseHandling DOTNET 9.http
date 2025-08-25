@@ -8,5 +8,11 @@ GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/text
 ###
 GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/json
 
-###
+### RESULT
 GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-le-ir/{{productId}}
+
+### TYPED RESULT
+GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-le-tr/{{productId}}
+
+
+

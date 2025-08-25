@@ -1,4 +1,6 @@
 using M02.MinimalEndpointAnatomy.Data;
+using M02.MinimalEndpointAnatomy.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,16 @@ app.MapGet("/api/products-le-ir/{id:guid}", (Guid id, ProductRepository reposito
     return product is null
             ? Results.NotFound()
             : Results.Ok(product);
+});
+
+app.MapGet("/api/products-le-tr/{id:guid}",
+Results<Ok<Product>, NotFound> (Guid id, ProductRepository repository) =>
+{
+    var product = repository.GetProductById(id);
+
+    return product is null
+            ? TypedResults.NotFound()
+            : TypedResults.Ok(product);
 });
 
 
