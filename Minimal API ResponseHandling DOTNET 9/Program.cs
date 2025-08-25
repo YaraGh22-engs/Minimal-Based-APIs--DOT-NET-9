@@ -1,23 +1,28 @@
+using M02.MinimalEndpointAnatomy.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+
+builder.Services.AddSingleton<ProductRepository>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+
+app.MapGet("/text", () => "Hello World");
+
+app.MapGet("/json", () => new { Message = "Hello" });
+
+app.MapGet("/api/products-le-ir/{id:guid}", (Guid id, ProductRepository repository) =>
 {
-    app.MapOpenApi();
-}
+    var product = repository.GetProductById(id);
 
-app.UseHttpsRedirection();
+    return product is null
+            ? Results.NotFound()
+            : Results.Ok(product);
+});
 
-app.UseAuthorization();
-
-app.MapControllers();
 
 app.Run();

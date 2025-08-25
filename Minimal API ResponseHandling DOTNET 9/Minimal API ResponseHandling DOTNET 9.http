@@ -1,6 +1,12 @@
 @Minimal_API_ResponseHandling_DOTNET_9_HostAddress = http://localhost:5239
 
-GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/
-Accept: application/json
+@productId = 2779ee47-10b0-4bd7-8342-404006aa1392
+
+
+GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/text
 
 ###
+GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/json
+
+###
+GET {{Minimal_API_ResponseHandling_DOTNET_9_HostAddress}}/api/products-le-ir/{{productId}}
