@@ -1,6 +1,26 @@
 @Grouped_Endpoints_HostAddress = http://localhost:5056
-
-GET {{Grouped_Endpoints_HostAddress}}/
-Accept: application/json
+ 
 
 ###
+@productId = 2779ee47-10b0-4bd7-8342-404006aa1392
+ 
+###
+GET {{Grouped_Endpoints_HostAddress}}/api/products
+
+###
+GET {{Grouped_Endpoints_HostAddress}}/api/products/{{productId}}
+
+###
+POST {{Grouped_Endpoints_HostAddress}}/api/products
+Content-Type: application/json
+
+
+
+###
+PUT {{Grouped_Endpoints_HostAddress}}/api/products/{{productId}}
+Content-Type: application/json
+
+
+
+###
+DELETE {{Grouped_Endpoints_HostAddress}}/api/products/{{productId}}
