@@ -22,6 +22,22 @@ app.MapGet("/api/products/{id:guid}", (Guid id, ProductRepository repository) =>
     return product is null ? Results.NotFound() : Results.Ok(ProductResponse.FromModel(product));
 });
 
+IResult GetProduct(Guid id, ProductRepository repository)
+{
+    // Handles retrieving a single product by its unique identifier
+    var product = repository.GetProductById(id);
+
+    return product is null ? Results.NotFound() : Results.Ok(ProductResponse.FromModel(product));
+}
+
+async Task<IResult> GetProducts(ProductRepository repository)
+{
+    // Handles retrieving a list of products
+    await Task.Delay(100);
+    return Results.Ok(repository.GetProductsPage());
+}
+
+
 
 
 app.Run();
