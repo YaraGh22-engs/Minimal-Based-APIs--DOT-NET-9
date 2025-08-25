@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal Based APIs -DOT NET
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimal API ResponseHandling DOTNET 9", "Minimal API ResponseHandling DOTNET 9\Minimal API ResponseHandling DOTNET 9.csproj", "{3D9B4841-7E33-4A65-B28C-FE2E364B0605}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grouped Endpoints", "Grouped Endpoints\Grouped Endpoints.csproj", "{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3D9B4841-7E33-4A65-B28C-FE2E364B0605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D9B4841-7E33-4A65-B28C-FE2E364B0605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D9B4841-7E33-4A65-B28C-FE2E364B0605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCEAA401-A08F-4C4B-BADA-B4F35C64D4BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

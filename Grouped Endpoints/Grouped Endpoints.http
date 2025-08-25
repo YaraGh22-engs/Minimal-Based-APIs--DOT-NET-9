@@ -1,0 +1,6 @@
+@Grouped_Endpoints_HostAddress = http://localhost:5056
+
+GET {{Grouped_Endpoints_HostAddress}}/
+Accept: application/json
+
+###
